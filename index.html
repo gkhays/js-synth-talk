@@ -12,14 +12,16 @@
     </head>
 
     <body>
-        <a class="nav-link p-2" href="https://github.com/gkhays/js-synth-talk" target="_blank" rel="noopener" aria-label="GitHub"><img src="GitHub-Mark-32px.png"></a>
+        <a id="src" class="nav-link p-2" href="https://github.com/gkhays/js-synth-talk" target="_blank" rel="noopener" aria-label="GitHub"><img src="GitHub-Mark-32px.png"></a>
         
-        <div id="main">
+        <div id="main">            
             <div>
                 <textarea class="form-control rounded-0" id="message" rows="5" placeholder="What do you want to say?"></textarea>  
             </div>
             <div>
                 <button id="go">Talk!</button>
+                <select class="select-picker" id="voices"></select>
+                <label id="vl" for="voices" class="control-label">Choose voice:</label>
             </div>
         </div>
     </body>

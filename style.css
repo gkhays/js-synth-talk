@@ -10,9 +10,24 @@
 
 #main {
     margin: 5px;
+    /*overflow: auto;*/
+}
+
+#voices {
+    margin: 5px;
+    float: right;
+}
+
+/* TODO - Hack until I can tame Bootstrap! */
+#vl {
+    float: right;
 }
 
 #go {
     float: right;
     margin: 5px;
+}
+
+#src {
+    float: right;
 }
