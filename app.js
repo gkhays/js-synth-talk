@@ -4,15 +4,17 @@ $(document).ready(function() {
 	$('#message').focus();
 
 	speechSynthesis.onvoiceschanged = function() {
-		//var voiceList = speechSynthesis.getVoices();
-		var voiceList = $('#voices');
-		if (voiceList.find('option').length == 0) {
-			speechSynthesis.getVoices().forEach(function(voice, index) {
-				// var option = $('<option>').val(index).html(voice.name);
-				// voiceList.append(option);
-				$('#voices').append($('<option>').val(index).html(voice.name));
-			});
-		}
+		var voiceList = speechSynthesis.getVoices();
+		if (voiceList.length == 0) {
+			$('#dropdown').hide();
+		} else {
+			var voiceChoices = $('#voices');
+			if (voiceChoices.find('option').length == 0) {
+				voiceList.forEach(function(voice, index) {
+					$('#voices').append($('<option>').val(index).html(voice.name));
+				});
+			}
+		}		
 	}
 
   $('#go').click(function() {
