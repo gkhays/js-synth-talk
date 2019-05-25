@@ -5,6 +5,7 @@ $(document).ready(function() {
 
 	speechSynthesis.onvoiceschanged = function() {
 		var voiceList = speechSynthesis.getVoices();
+		console.log(voiceList.length + " voices");
 		if (voiceList.length == 0) {
 			$('#dropdown').hide();
 		} else {
@@ -21,8 +22,10 @@ $(document).ready(function() {
   	var msg = $("#message").val();
 		var talker = new SpeechSynthesisUtterance();
 		var voices = speechSynthesis.getVoices();
-		// talker.voice = $('#voices option:selected');
-		talker.voice = voices[$('#voices').val()];
+		if (voices.length > 0) {
+			// talker.voice = $('#voices option:selected');
+			talker.voice = voices[$('#voices').val()];
+		}
 		talker.text = msg;
 		window.speechSynthesis.speak(talker);
   });
